@@ -1,4 +1,4 @@
-# Monitoramento de Nível de Tanque Industrial (ESP32 + MQTT + Node-RED)
+# Monitoramento de Nível de Tanque Industrial (ESP32 + MQTT + Node-RED) V1.0
 
 Este projeto implementa um sistema de monitoramento de nível para aplicações industriais utilizando IoT. O objetivo é medir o nível de um tanque, publicar o valor via MQTT e visualizar em um dashboard supervisório no Node-RED, incluindo alarmes visuais baseados no nível lido.
 
