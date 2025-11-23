@@ -1,334 +1,334 @@
 [
-    {
-        "id": "5805c0fd760b3e5d",
-        "type": "tab",
-        "label": "Fluxo 1",
-        "disabled": false,
-        "info": "",
-        "env": []
-    },
-    {
-        "id": "259049fa0cbdda56",
-        "type": "mqtt in",
-        "z": "5805c0fd760b3e5d",
-        "name": "",
-        "topic": "industria/tanque1/nivel_percento",
-        "qos": "2",
-        "datatype": "auto-detect",
-        "broker": "a92be1a5e3541988",
-        "nl": false,
-        "rap": true,
-        "rh": 0,
-        "inputs": 0,
-        "x": 170,
-        "y": 120,
-        "wires": [
-            [
-                "294ae616d2ee8f10"
-            ]
-        ]
-    },
-    {
-        "id": "294ae616d2ee8f10",
-        "type": "change",
-        "z": "5805c0fd760b3e5d",
-        "name": "1. Converter para Número",
-        "rules": [
-            {
-                "t": "set",
-                "p": "payload",
-                "pt": "msg",
-                "to": "payload",
-                "tot": "msg",
-                "dc": true
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 430,
-        "y": 120,
-        "wires": [
-            [
-                "0a9c5366dec624d2",
-                "56fa41b7c245c0b9",
-                "7be236c7676229f0"
-            ]
-        ]
-    },
-    {
-        "id": "0a9c5366dec624d2",
-        "type": "switch",
-        "z": "5805c0fd760b3e5d",
-        "name": "2. Lógica de Alarme",
-        "property": "payload",
-        "propertyType": "msg",
-        "rules": [
-            {
-                "t": "lt",
-                "v": "10",
-                "vt": "num"
-            },
-            {
-                "t": "lte",
-                "v": "30",
-                "vt": "num"
-            },
-            {
-                "t": "else"
-            }
-        ],
-        "checkall": "false",
-        "repair": false,
-        "outputs": 3,
-        "x": 680,
-        "y": 120,
-        "wires": [
-            [
-                "c13e900a98264f61"
-            ],
-            [
-                "23836d5f4bab2c34"
-            ],
-            [
-                "3c2b75ef5679a8dc"
-            ]
-        ]
-    },
-    {
-        "id": "c13e900a98264f61",
-        "type": "change",
-        "z": "5805c0fd760b3e5d",
-        "name": "CRÍTICO",
-        "rules": [
-            {
-                "t": "set",
-                "p": "payload",
-                "pt": "msg",
-                "to": "CRÍTICO",
-                "tot": "str"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 860,
-        "y": 60,
-        "wires": [
-            [
-                "2221443154f0be24"
-            ]
-        ]
-    },
-    {
-        "id": "23836d5f4bab2c34",
-        "type": "change",
-        "z": "5805c0fd760b3e5d",
-        "name": "BAIXO",
-        "rules": [
-            {
-                "t": "set",
-                "p": "payload",
-                "pt": "msg",
-                "to": "BAIXO",
-                "tot": "str"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 860,
-        "y": 120,
-        "wires": [
-            [
-                "2221443154f0be24"
-            ]
-        ]
-    },
-    {
-        "id": "3c2b75ef5679a8dc",
-        "type": "change",
-        "z": "5805c0fd760b3e5d",
-        "name": "NORMAL",
-        "rules": [
-            {
-                "t": "set",
-                "p": "payload",
-                "pt": "msg",
-                "to": "NORMAL",
-                "tot": "str"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 860,
-        "y": 180,
-        "wires": [
-            [
-                "2221443154f0be24"
-            ]
-        ]
-    },
-    {
-        "id": "2221443154f0be24",
-        "type": "ui_text",
-        "z": "5805c0fd760b3e5d",
-        "group": "20f5fad5c7a838f1",
-        "order": 3,
-        "width": 4,
-        "height": 1,
-        "name": "Status do Tanque",
-        "label": "Status do Tanque",
-        "format": "{{msg.payload}}",
-        "layout": "row",
-        "className": "",
-        "style": false,
-        "font": "",
-        "fontSize": "",
-        "color": "#000000",
-        "x": 1050,
-        "y": 120,
-        "wires": []
-    },
-    {
-        "id": "56fa41b7c245c0b9",
-        "type": "ui_gauge",
-        "z": "5805c0fd760b3e5d",
-        "name": "Nível do sistema",
-        "group": "20f5fad5c7a838f1",
-        "order": 2,
-        "width": 4,
-        "height": 3,
-        "gtype": "wave",
-        "title": "Nível do sistema",
-        "label": " (%)",
-        "format": "{{value}}",
-        "min": 0,
-        "max": "100",
-        "colors": [
-            "#00b500",
-            "#e6e600",
-            "#ca3838"
-        ],
-        "seg1": "30",
-        "seg2": "10",
-        "diff": false,
-        "className": "",
-        "x": 750,
-        "y": 240,
-        "wires": []
-    },
-    {
-        "id": "7be236c7676229f0",
-        "type": "ui_chart",
-        "z": "5805c0fd760b3e5d",
-        "name": "",
-        "group": "20f5fad5c7a838f1",
-        "order": 1,
-        "width": 4,
-        "height": 3,
-        "label": "Histórico de Nível",
-        "chartType": "line",
-        "legend": "false",
-        "xformat": "HH:mm:ss",
-        "interpolate": "linear",
-        "nodata": "",
-        "dot": false,
-        "ymin": "0",
-        "ymax": "100",
-        "removeOlder": "30",
-        "removeOlderPoints": "",
-        "removeOlderUnit": "3600",
-        "cutout": 0,
-        "useOneColor": false,
-        "useUTC": false,
-        "colors": [
-            "#1f77b4",
-            "#aec7e8",
-            "#ff7f0e",
-            "#2ca02c",
-            "#98df8a",
-            "#d62728",
-            "#ff9896",
-            "#9467bd",
-            "#c5b0d5"
-        ],
-        "outputs": 1,
-        "useDifferentColor": false,
-        "className": "",
-        "x": 750,
-        "y": 300,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "50b1aea214a36c5a",
-        "type": "ui_spacer",
-        "z": "5805c0fd760b3e5d",
-        "name": "spacer",
-        "group": "20f5fad5c7a838f1",
-        "order": 4,
-        "width": 7,
-        "height": 1
-    },
-    {
-        "id": "a92be1a5e3541988",
-        "type": "mqtt-broker",
-        "name": "",
-        "broker": "broker.hivemq.com",
-        "port": 1883,
-        "clientid": "",
-        "autoConnect": true,
-        "usetls": false,
-        "protocolVersion": 4,
-        "keepalive": 60,
-        "cleansession": true,
-        "autoUnsubscribe": true,
-        "birthTopic": "",
-        "birthQos": "0",
-        "birthRetain": "false",
-        "birthPayload": "",
-        "birthMsg": {},
-        "closeTopic": "",
-        "closeQos": "0",
-        "closeRetain": "false",
-        "closePayload": "",
-        "closeMsg": {},
-        "willTopic": "",
-        "willQos": "0",
-        "willRetain": "false",
-        "willPayload": "",
-        "willMsg": {},
-        "userProps": "",
-        "sessionExpiry": ""
-    },
-    {
-        "id": "20f5fad5c7a838f1",
-        "type": "ui_group",
-        "name": "MQTT ",
-        "tab": "28608aa137328f96",
-        "order": 1,
-        "disp": true,
-        "width": 8,
-        "collapse": false,
-        "className": ""
-    },
-    {
-        "id": "28608aa137328f96",
-        "type": "ui_tab",
-        "name": "Iot Project",
-        "icon": "dashboard",
-        "disabled": false,
-        "hidden": false
-    }
+    {
+        "id": "5805c0fd760b3e5d",
+        "type": "tab",
+        "label": "Fluxo 1",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "259049fa0cbdda56",
+        "type": "mqtt in",
+        "z": "5805c0fd760b3e5d",
+        "name": "",
+        "topic": "industria/tanque1/nivel_percento",
+        "qos": "2",
+        "datatype": "auto-detect",
+        "broker": "a92be1a5e3541988",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 170,
+        "y": 120,
+        "wires": [
+            [
+                "294ae616d2ee8f10"
+            ]
+        ]
+    },
+    {
+        "id": "294ae616d2ee8f10",
+        "type": "change",
+        "z": "5805c0fd760b3e5d",
+        "name": "1. Converter para Número",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "payload",
+                "tot": "msg",
+                "dc": true
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 430,
+        "y": 120,
+        "wires": [
+            [
+                "0a9c5366dec624d2",
+                "56fa41b7c245c0b9",
+                "7be236c7676229f0"
+            ]
+        ]
+    },
+    {
+        "id": "0a9c5366dec624d2",
+        "type": "switch",
+        "z": "5805c0fd760b3e5d",
+        "name": "2. Lógica de Alarme",
+        "property": "payload",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "lt",
+                "v": "10",
+                "vt": "num"
+            },
+            {
+                "t": "lte",
+                "v": "30",
+                "vt": "num"
+            },
+            {
+                "t": "else"
+            }
+        ],
+        "checkall": "false",
+        "repair": false,
+        "outputs": 3,
+        "x": 680,
+        "y": 120,
+        "wires": [
+            [
+                "c13e900a98264f61"
+            ],
+            [
+                "23836d5f4bab2c34"
+            ],
+            [
+                "3c2b75ef5679a8dc"
+            ]
+        ]
+    },
+    {
+        "id": "c13e900a98264f61",
+        "type": "change",
+        "z": "5805c0fd760b3e5d",
+        "name": "CRÍTICO",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "CRÍTICO",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 860,
+        "y": 60,
+        "wires": [
+            [
+                "2221443154f0be24"
+            ]
+        ]
+    },
+    {
+        "id": "23836d5f4bab2c34",
+        "type": "change",
+        "z": "5805c0fd760b3e5d",
+        "name": "BAIXO",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "BAIXO",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 860,
+        "y": 120,
+        "wires": [
+            [
+                "2221443154f0be24"
+            ]
+        ]
+    },
+    {
+        "id": "3c2b75ef5679a8dc",
+        "type": "change",
+        "z": "5805c0fd760b3e5d",
+        "name": "NORMAL",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "NORMAL",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 860,
+        "y": 180,
+        "wires": [
+            [
+                "2221443154f0be24"
+            ]
+        ]
+    },
+    {
+        "id": "2221443154f0be24",
+        "type": "ui_text",
+        "z": "5805c0fd760b3e5d",
+        "group": "20f5fad5c7a838f1",
+        "order": 3,
+        "width": 4,
+        "height": 1,
+        "name": "Status do Tanque",
+        "label": "Status do Tanque",
+        "format": "{{msg.payload}}",
+        "layout": "row",
+        "className": "",
+        "style": false,
+        "font": "",
+        "fontSize": "",
+        "color": "#000000",
+        "x": 1050,
+        "y": 120,
+        "wires": []
+    },
+    {
+        "id": "56fa41b7c245c0b9",
+        "type": "ui_gauge",
+        "z": "5805c0fd760b3e5d",
+        "name": "Nível do sistema",
+        "group": "20f5fad5c7a838f1",
+        "order": 2,
+        "width": 4,
+        "height": 3,
+        "gtype": "wave",
+        "title": "Nível do sistema",
+        "label": " (%)",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "100",
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "30",
+        "seg2": "10",
+        "diff": false,
+        "className": "",
+        "x": 750,
+        "y": 240,
+        "wires": []
+    },
+    {
+        "id": "7be236c7676229f0",
+        "type": "ui_chart",
+        "z": "5805c0fd760b3e5d",
+        "name": "",
+        "group": "20f5fad5c7a838f1",
+        "order": 1,
+        "width": 4,
+        "height": 3,
+        "label": "Histórico de Nível",
+        "chartType": "line",
+        "legend": "false",
+        "xformat": "HH:mm:ss",
+        "interpolate": "linear",
+        "nodata": "",
+        "dot": false,
+        "ymin": "0",
+        "ymax": "100",
+        "removeOlder": "30",
+        "removeOlderPoints": "",
+        "removeOlderUnit": "3600",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": false,
+        "colors": [
+            "#1f77b4",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "outputs": 1,
+        "useDifferentColor": false,
+        "className": "",
+        "x": 750,
+        "y": 300,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "50b1aea214a36c5a",
+        "type": "ui_spacer",
+        "z": "5805c0fd760b3e5d",
+        "name": "spacer",
+        "group": "20f5fad5c7a838f1",
+        "order": 4,
+        "width": 7,
+        "height": 1
+    },
+    {
+        "id": "a92be1a5e3541988",
+        "type": "mqtt-broker",
+        "name": "",
+        "broker": "broker.hivemq.com",
+        "port": 1883,
+        "clientid": "",
+        "autoConnect": true,
+        "usetls": false,
+        "protocolVersion": 4,
+        "keepalive": 60,
+        "cleansession": true,
+        "autoUnsubscribe": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthRetain": "false",
+        "birthPayload": "",
+        "birthMsg": {},
+        "closeTopic": "",
+        "closeQos": "0",
+        "closeRetain": "false",
+        "closePayload": "",
+        "closeMsg": {},
+        "willTopic": "",
+        "willQos": "0",
+        "willRetain": "false",
+        "willPayload": "",
+        "willMsg": {},
+        "userProps": "",
+        "sessionExpiry": ""
+    },
+    {
+        "id": "20f5fad5c7a838f1",
+        "type": "ui_group",
+        "name": "MQTT ",
+        "tab": "28608aa137328f96",
+        "order": 1,
+        "disp": true,
+        "width": 8,
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "28608aa137328f96",
+        "type": "ui_tab",
+        "name": "Iot Project",
+        "icon": "dashboard",
+        "disabled": false,
+        "hidden": false
+    }
 ]
