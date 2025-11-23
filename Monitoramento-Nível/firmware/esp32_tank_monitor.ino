@@ -101,7 +101,6 @@ void setup_wifi() { // configura conexão ao WIFI
 }
 
 void reconnect() { // Função de conexão ao broker
-  // Loop until we're reconnected
   while (!client.connected()) {
     if (client.connect("espClientGiu")) {
       Serial.println("Broker connected");
