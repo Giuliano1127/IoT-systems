@@ -44,9 +44,8 @@ Este é o projeto base para validação da arquitetura **Edge-to-Cloud**. O foco
 
 Os próximos projetos serão focados em adicionar a camada de dados e inteligência à arquitetura de IoT:
 
-1.  **Migração de Dados:** Implementação de serialização de dados via **JSON** e persistência de dados em banco **Time-Series** (ex: InfluxDB).
-2.  **Análise e Visualização:** Desenvolvimento de *scripts* em **Python** e criação de Dashboards avançados com **Grafana**.
-3.  **Controle Remoto:** Adição de funcionalidades de **Controle Remoto** (publicação de comandos via MQTT para o ESP32).
+1.  **Análise e Visualização:** Desenvolvimento de *scripts* em **Python** 
+2.  **Controle Remoto:** Adição de funcionalidades de **Controle Remoto** (publicação de comandos via MQTT para o ESP32).
 
 ---
 
