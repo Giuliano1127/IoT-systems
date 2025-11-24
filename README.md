@@ -15,7 +15,7 @@ Este repositório valida o conhecimento prático nas seguintes tecnologias:
 
 | Categoria | Tecnologia | Domínio |
 | :--- | :--- | :--- |
-| **Hardware** | ESP32, Sensores (Ultrassônico, Temperatura) | Desenvolvimento em **C++** |
+| **Hardware** | ESP32, Sensores | Desenvolvimento em **C++** |
 | **Comunicação** | **MQTT** | Telemetria assíncrona, QoS |
 | **Plataformas** | **Node-RED** | Dashboards Web, Lógica de Alarme (SCADA), Fluxos |
 | **Software** | Python | [Futura implementação para Análise de Dados] |
