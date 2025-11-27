@@ -29,7 +29,7 @@ Aqui estão os projetos contidos neste repositório. Para acessar o código, dia
 
 ### 1. 🏭 Monitoramento de Nível de Tanque Industrial
 
-Este é o projeto base para validação da arquitetura **Edge-to-Cloud**. O foco é demonstrar a lógica de supervisão em tempo real.
+Este é o projeto base para validação da arquitetura. O foco é demonstrar a lógica de supervisão em tempo real.
 
 | Detalhes | Valor |
 | :--- | :--- |
