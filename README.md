@@ -4,7 +4,7 @@ Bem-vindo(a) ao meu portfólio de projetos, focado em demonstrar a construção 
 
 Os projetos aqui apresentados cobrem as principais camadas de uma arquitetura de IoT:
 * **Edge Computing (Embarcado):** Aquisição e pré-processamento de dados em hardware de baixo custo (ESP32).
-* **Comunicação:** Utilização de protocolos leves e eficientes, como **MQTT**, para telemetria robusta.
+* **Comunicação:** Utilização de protocolos leves e eficientes, como **MQTT**.
 * **Supervisão & Software:** Desenvolvimento de interfaces Web (SCADA/Node-RED), lógica de alarme e, futuramente, análise de dados (Python).
 
 ---
@@ -16,9 +16,8 @@ Este repositório valida o conhecimento prático nas seguintes tecnologias:
 | Categoria | Tecnologia | Domínio |
 | :--- | :--- | :--- |
 | **Hardware** | ESP32, Sensores | Desenvolvimento em **C++** |
-| **Comunicação** | **MQTT** | Telemetria assíncrona, QoS |
+| **Comunicação** | **MQTT** |
 | **Plataformas** | **Node-RED** | Dashboards Web, Lógica de Alarme (SCADA), Fluxos |
-| **Software** | Python | [Futura implementação para Análise de Dados] |
 | **Infraestrutura** | Brokers MQTT (Cloud), Wi-Fi | Conectividade e Roteamento de Mensagens |
 
 ---
@@ -42,9 +41,8 @@ Este é o projeto base para validação da arquitetura. O foco é demonstrar a l
 
 ## ⏭️ Próximos Passos (Roadmap)
 
-Os próximos projetos serão focados em adicionar a camada de dados e inteligência à arquitetura de IoT:
+Os próximos projetos.
 
-1.  **Análise e Visualização:** Desenvolvimento de *scripts* em **Python** 
 2.  **Controle Remoto:** Adição de funcionalidades de **Controle Remoto** (publicação de comandos via MQTT para o ESP32).
 
 ---
