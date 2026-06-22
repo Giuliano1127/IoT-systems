@@ -22,7 +22,7 @@ Este projeto utiliza um ESP32 e um sensor ultrassônico HC-SR04 para medir o ní
    ```cpp
    const char* ssid = "SUA_REDE_WIFI";
    const char* password = "SUA_SENHA";
-   const char* mqtt_server = "BROKER";
+   const char* mqtt_server = "SEU BROKER OU BROKER PUBLICO";
 
    client.publish("SEU_TOPICO_AQUI", String(nivelPorcentagem).c_str());
 
