@@ -25,6 +25,3 @@ Este projeto utiliza um ESP32 e um sensor ultrassônico HC-SR04 para medir o ní
    const char* mqtt_server = "BROKER";
 
    client.publish("SEU_TOPICO_AQUI", String(nivelPorcentagem).c_str());
-
-   <img width="1365" height="654" alt="image" src="https://github.com/user-attachments/assets/04850d01-788d-4156-8ea0-4cd02fdc8143" />
-
