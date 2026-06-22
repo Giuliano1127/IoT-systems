@@ -26,5 +26,3 @@ Este projeto utiliza um ESP32 e um sensor ultrassônico HC-SR04 para medir o ní
 
    client.publish("SEU_TOPICO_AQUI", String(nivelPorcentagem).c_str());
 
-   <img width="1365" height="654" alt="Captura de tela 2026-06-22 161818" src="https://github.com/user-attachments/assets/481c7b67-c5a5-4a66-a93f-01102f92ba7d" />
-
