@@ -1,0 +1,19 @@
+# Projeto: ESP32 + MQTT + Node-RED
+
+Monitoramento de dados via Wi-Fi.
+
+## 🛠 O Fluxo
+
+
+1. **ESP32**: Envia dados via MQTT.
+2. **Broker**: Recebe e repassa a mensagem.
+3. **Node-RED**: Exibe os dados no Dashboard.
+
+## 🚀 Configuração Rápida
+
+* **ESP32**: Use a biblioteca `PubSubClient`. Configure o IP do seu broker no código ou público como "broker.hivemq.com".
+* **Broker**: Certifique-se de que esteja rodando no prompt de comando.
+* **Node-RED**: 
+    1. Instale o pacote `node-red-dashboard`.
+    2. Use o nó `mqtt-in` (tópico igual ao do ESP32).
+    3. Conecte a um nó `gauge` ou `chart`.
