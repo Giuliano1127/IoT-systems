@@ -7,9 +7,9 @@
 #define ALTURA_TOTAL_CM 100.0 // Altura total do tanque
 
 //Credenciaias
-const char* ssid = ""; // Your Net
-const char* password = ""; // Your Password
-const char* mqtt_server = ""; // Your Broker
+const char* ssid = "SUA REDE"; // Your Net
+const char* password = "SUA SENHA"; // Your Password
+const char* mqtt_server = "SEU BROKER OU BROKER PUBLICO"; // Your Broker
 
 //Clientes
 WiFiClient espClientGiu;
@@ -49,7 +49,7 @@ void loop() {
   float nivelPorcentagem = calculaNivelPorcentagem(distancia) * 100; 
   
 
-  client.publish("TOPIC", String(nivelPorcentagem).c_str()); 
+  client.publish("TANQUE1", String(nivelPorcentagem).c_str()); 
   exibeserial(nivelCM, nivelPorcentagem);
 
   delay(5000);
