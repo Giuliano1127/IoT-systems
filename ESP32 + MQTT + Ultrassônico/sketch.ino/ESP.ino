@@ -49,7 +49,7 @@ void loop() {
   float nivelPorcentagem = calculaNivelPorcentagem(distancia) * 100; 
   
 
-  client.publish("TANQUE1", String(nivelPorcentagem).c_str()); 
+  client.publish("TOPICO", String(nivelPorcentagem).c_str()); 
   exibeserial(nivelCM, nivelPorcentagem);
 
   delay(5000);
@@ -71,7 +71,6 @@ float calculaNivelPorcentagem(float distanciaLida){
   // Calcula a fração (0.0 a 1.0)
   float nivelPorcentagem = (nivelCM / ALTURA_TOTAL_CM); 
   
-  // CORREÇÃO: Usar '=' para atribuir valor e garantir limites
   if (nivelPorcentagem < 0) {
     nivelPorcentagem = 0;
   }
