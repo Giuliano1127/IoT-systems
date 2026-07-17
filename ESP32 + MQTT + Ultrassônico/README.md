@@ -28,5 +28,4 @@ Este projeto utiliza um ESP32 e um sensor ultrassônico HC-SR04 para medir o ní
 
 
 
-https://github.com/user-attachments/assets/ea7f8031-404f-4996-8563-21c17e5e7f43
 
