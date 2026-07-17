@@ -12,7 +12,7 @@
         "type": "mqtt in",
         "z": "c93688c8ecc94b0c",
         "name": "",
-        "topic": "",
+        "topic": "seu/topico/aqui",
         "qos": "2",
         "datatype": "auto-detect",
         "broker": "142c6f70dd612f6f",
@@ -26,32 +26,6 @@
             [
                 "7e00a88f926c9d7c"
             ]
-        ]
-    },
-    {
-        "id": "cc8023fee3f6381d",
-        "type": "aedes broker",
-        "z": "c93688c8ecc94b0c",
-        "name": "",
-        "mqtt_port": 1883,
-        "mqtt_ws_bind": "port",
-        "mqtt_ws_port": "",
-        "mqtt_ws_path": "",
-        "cert": "",
-        "key": "",
-        "ca": "",
-        "certname": "",
-        "keyname": "",
-        "caname": "",
-        "persistence_bind": "memory",
-        "dburl": "",
-        "persist_to_file": false,
-        "usetls": false,
-        "x": 150,
-        "y": 520,
-        "wires": [
-            [],
-            []
         ]
     },
     {
@@ -86,32 +60,14 @@
         "id": "142c6f70dd612f6f",
         "type": "mqtt-broker",
         "name": "Projeto MQTT",
-        "broker": "broker.hivemq.com",
+        "broker": "INSIRA_O_IP_OU_URL_AQUI",
         "port": "1883",
         "clientid": "",
         "autoConnect": true,
         "usetls": false,
         "protocolVersion": 4,
         "keepalive": 60,
-        "cleansession": true,
-        "autoUnsubscribe": true,
-        "birthTopic": "",
-        "birthQos": "0",
-        "birthRetain": "false",
-        "birthPayload": "",
-        "birthMsg": {},
-        "closeTopic": "",
-        "closeQos": "0",
-        "closeRetain": "false",
-        "closePayload": "",
-        "closeMsg": {},
-        "willTopic": "",
-        "willQos": "0",
-        "willRetain": "false",
-        "willPayload": "",
-        "willMsg": {},
-        "userProps": "",
-        "sessionExpiry": ""
+        "cleansession": true
     },
     {
         "id": "aca8febf7e57e83e",
@@ -131,14 +87,5 @@
         "icon": "dashboard",
         "disabled": false,
         "hidden": false
-    },
-    {
-        "id": "152d09148c1d3974",
-        "type": "global-config",
-        "env": [],
-        "modules": {
-            "node-red-contrib-aedes": "1.2.0",
-            "node-red-dashboard": "3.6.6"
-        }
     }
 ]
